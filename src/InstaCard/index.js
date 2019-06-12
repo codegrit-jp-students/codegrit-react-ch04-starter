@@ -16,6 +16,7 @@ export default class extends Component {
     theme: 'light',
     chosenId: 1,
     isLoading: true,
+    loadedOnce: false,
   }
 
   componentDidMount() {
@@ -24,6 +25,7 @@ export default class extends Component {
       this.setState({
         data,
         isLoading: false,
+        loadedOnce: true
       })
     })
   }
@@ -56,14 +58,16 @@ export default class extends Component {
       chosenId,
       isLoading,
       data,
+      loadedOnce
     } = this.state;
     let instaCardClass = "insta-card";
     if (theme === 'dark') {
       instaCardClass = "insta-card insta-card-dark"
     }
-    if (isLoading) {
+    if (!loadedOnce && isLoading) {
       return <EmptyBox />
     }
+    
     // console.log(chosenId)
     let articlePart = (
       <article className={instaCardClass}>
