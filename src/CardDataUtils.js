@@ -41,3 +41,5 @@ export const fetchData = (id = 1) => {
     }, 1000)
   })
 }
+
+export default fetchData
