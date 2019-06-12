@@ -1,25 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Comment = ({ username, comment }) => (
-  <li className="poster-comment">
-    <a className="commenter-name">
-      {username}
-    </a>
-    <span className="commenter-comment">
-      {comment}
-    </span>
-  </li>
-);
+const Comment = ({ comment }) => {
+  const {
+    poster,
+    body
+  } = comment
+  return (
+    <li className="poster-comment">
+      <a className="commenter-name">
+        {poster}
+      </a>
+      <span className="commenter-comment">
+        {body}
+      </span>
+    </li>
+  )};
 
 Comment.propTypes = {
-  username: PropTypes.string.isRequired,
-  comment: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
 }
 
 Comment.defaultProps = {
-  username: "testuser",
-  comment: "テストのコメント",
+  poster: "testuser",
+  body: "テストのコメント",
 }
 
 export default Comment;

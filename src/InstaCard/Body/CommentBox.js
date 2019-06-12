@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { identifier } from '@babel/types';
 
 export default class extends Component {
   state = {
-    comment: "実はコメントを書いているところです。"
+    comment: "実はコメントを書いているところです。",
   }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(loadedOnce) {
     // chosenIdが変わったらコメントを空にしましょう。
+    //console.log("aa")
+    if (this.props.loadedOnce) {
+      this.setState({
+        comment: ""
+      })
+    }
+    
   }
 
   render() {
