@@ -4,15 +4,15 @@ import MainIcons from './MainIcons';
 import Comments from './Comments';
 import CommentBox from './CommentBox'
 
-const BodyMain = ({ theme ,data ,loadedOnce }) => {
-  console.log(loadedOnce)
+const BodyMain = ({ theme, data, chosenId }) => {
+  //console.log(chosenId)
   return (
     <section className="card-main">
       <MainIcons theme={theme} />
       <div className="card-like-counts">100 likes</div>
-      <Comments data={data}/>
+      <Comments data={data} />
       <div className="post-date">1日前</div>
-      <CommentBox loadedOnce={loadedOnce}/>
+      <CommentBox chosenId={chosenId}/>
     </section>
   )};
 

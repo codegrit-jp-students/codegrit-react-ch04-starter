@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BodyMain from './Main';
 
-const Body = ({ theme, data, loadedOnce }) => {
+const Body = ({ theme, data, chosenId}) => {
+  // console.log(chosenId)
   const {
     imageUrl,
   } = data
@@ -11,7 +12,7 @@ const Body = ({ theme, data, loadedOnce }) => {
       <div className="card-image">
         <img alt="メイン画像" src={imageUrl} />
       </div>
-      <BodyMain theme={theme} data={data} loadedOnce={loadedOnce}/>
+      <BodyMain theme={theme} data={data} chosenId={chosenId}/>
     </section>
   )};
 

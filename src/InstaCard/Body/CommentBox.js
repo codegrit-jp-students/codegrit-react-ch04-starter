@@ -5,10 +5,10 @@ export default class extends Component {
   state = {
     comment: "実はコメントを書いているところです。",
   }
-  componentDidUpdate(loadedOnce) {
+  componentDidUpdate(prevProps) {
+    console.log(prevProps.chosenId)
     // chosenIdが変わったらコメントを空にしましょう。
-    //console.log("aa")
-    if (this.props.loadedOnce) {
+    if (prevProps.chosenId !== this.props.chosenId) {
       this.setState({
         comment: ""
       })
